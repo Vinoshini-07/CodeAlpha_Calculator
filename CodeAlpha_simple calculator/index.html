@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SIMPLE CALCULATOR</title>
+		<style>
+			body{
+				font-family: Times New Roman;
+				background-color:#f2f2f2;
+				justify-content: center;
+				align-items: center;
+				height: 500px;
+				display: flex;
+			}
+			.calci{
+				background: #222222;
+				margin: 10px;
+				padding: 30px;
+				border-radius: 25px; 
+			}
+			input{
+				width: 98%;
+				height: 60px;
+				margin-bottom: 15px;
+				background-color: grey;
+				padding: 10px;
+				box-sizing: border-box;
+				text-align: right;
+				font-size: 18px;
+				color: black;
+			}
+			button{
+				border-radius: 10px;
+				width: 50px;
+				height: 50px;
+				margin:5px;
+				font-size: 18px;
+				cursor: pointer;
+				border: none;
+			}
+			.special{
+				background-color: forestgreen;
+			}
+			.num{
+				background-color: #f0f0f0;
+			}
+			.symbol{
+				background-color: #FF5722;
+			}
+			button:active{
+				background-color: grey;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="calci">
+			
+			<input type="text" id="display" disabled><br>
+			<button class="special" class="" onclick="clearr()">AC</button>
+			<button class="special" onclick="del()">DEL</button>
+			<button class="symbol" onclick="press('%')">%</button>
+			<button class="symbol" onclick="press('/')">/</button><br>
+			<button class="num" onclick="press('7')">7</button>
+			<button class="num" onclick="press('8')">8</button>
+			<button class="num" onclick="press('9')">9</button>
+			<button class="symbol" onclick="press('*')">*</button><br>
+			<button class="num" onclick="press('4')">4</button>
+			<button class="num" onclick="press('5')">5</button>
+			<button class="num" onclick="press('6')">6</button>
+			<button class="symbol" onclick="press('-')">-</button><br>
+			<button class="num" onclick="press('1')">1</button>
+			<button class="num" onclick="press('2')">2</button>
+			<button class="num" onclick="press('3')">3</button>
+			<button class="symbol" onclick="press('+')">+</button><br>
+			<button class="num" onclick="press('0')">0</button>
+			<button class="num" onclick="press('00')">00</button>
+			<button class="num" onclick="press('.')">.</button>
+			<button class="special" onclick ="calculate()">=</button>
+		</div>
+		<script>
+			let display=document.getElementById("display");
+			function press(val){
+				display.value+=val;
+			}
+			function calculate() {
+				display.value=eval(display.value);
+			}
+			function clearr(){
+				display.value="";
+			}
+			function del(){
+				display.value=display.value.slice(0,-1);
+			}
+			</script>
+		</body>
+</html>
